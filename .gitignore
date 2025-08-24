@@ -1,0 +1,15 @@
+__pycache__/
+*.pth
+*.pt
+*.db
+*.log
+*.png
+*.jpg
+datasets/
+DconnNet/inference_outputs/
+
+DconnNet/inference_val_output/
+DconnNet/visualized_outputs/
+DconnNet/visualized_val_outputs/
+DconnNet/save/
+DconnNet/save_best_models/

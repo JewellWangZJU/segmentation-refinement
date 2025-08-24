@@ -6,7 +6,6 @@ from data_loader.GetDataset_ISIC2018 import ISIC2018_dataset
 from data_loader.GetDataset_Retouch import MyDataset
 from data_loader.GetDataset_CHASE import MyDataset_CHASE
 from data_loader.GetDataset_CRACKS import MyDataset_CRACKS
-# from model.DconnNet import DconnNet
 from model.pyramid_vig import vig_seg_s_224_gelu 
 import glob
 import argparse
@@ -21,7 +20,7 @@ import os
 torch.cuda.set_device(0) ## GPU id
 
 def parse_args():
-    parser = argparse.ArgumentParser(description='DconnNet Training With Pytorch')
+    parser = argparse.ArgumentParser(description='VigSeg Training With Pytorch')
 
     # dataset info
     parser.add_argument('--dataset', type=str, default='retouch-Spectrailis',  
@@ -47,11 +46,6 @@ def parse_args():
                         help='define only when you select step lr optimization: what is the step size for reducing your lr')
     parser.add_argument('--gamma', type=float, default=0.5,  
                         help='define only when you select step lr optimization: what is the annealing rate for reducing your lr (lr = lr*gamma)')
-
-    parser.add_argument('--use_SDL', action='store_true', default=False,
-                        help='set as True if use SDL loss; only for Retouch dataset in this code. If you use it with other dataset please define your own path of label distribution in solver.py')
-    parser.add_argument('--folds', type=int, default=3,
-                        help='define folds number K for K-fold validation')
 
     # checkpoint and log
     parser.add_argument('--pretrained', type=str, default=None,

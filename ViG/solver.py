@@ -1,6 +1,6 @@
 from random import shuffle
 import numpy as np
-from connect_loss import connect_loss,Bilateral_voting
+import vig_loss 
 import torch.nn.functional as F
 import torch
 from torch.autograd import Variable
@@ -197,33 +197,23 @@ class Solver(object):
         self.cldc_ls = []
         with torch.no_grad(): 
             for j_batch, test_data in enumerate(loader):
-                curr_dice = []
                 X_test = Variable(test_data[0])
                 y_test = Variable(test_data[1])
-                # name = test_data[2]
 
                 X_test= X_test.cuda()
                 y_test = y_test.long().cuda()
 
-                output_test,_ = model(X_test)
+                output_test = model(X_test)
                 batch,channel,H,W = X_test.shape
-
-
-                hori_translation = self.hori_translation.repeat(batch,1,1,1).cuda()
-                verti_translation = self.verti_translation.repeat(batch,1,1,1).cuda()
-
-                
 
                 if self.args.num_class == 1:  
                     output_test = F.sigmoid(output_test)
-                    class_pred = output_test.view([batch,-1,8,H,W]) #(B, C, 8, H, W)
                     pred = torch.where(class_pred>0.5,1,0)
-                    pred,_ = Bilateral_voting(pred.float(),hori_translation,verti_translation)
 
                 else:
-                    class_pred = output_test.view([batch,-1,8,H,W]) #(B, C, 8, H, W)
-                    final_pred,_ = Bilateral_voting(class_pred,hori_translation,verti_translation)
-                    pred = get_mask(final_pred)
+                    ouput_test = F.softmax(output_test, dim=1)
+                    _, pred = output_test.max(dim=1)
+                    pred = pred.unsqueeze(1)
                     pred = self.one_hot(pred, X_test.shape)
                 
 
@@ -248,7 +238,6 @@ class Solver(object):
                     print('[Iteration : ' + str(j_batch) + '/' + str(len(loader)) + '] Total DSC:%.3f ' %(
                         np.mean(self.dice_ls)))
 
-            # print(len(self.Jac_ls))
             Jac_ls =np.array(self.Jac_ls)
             dice_ls = np.array(self.dice_ls)
             total_dice = np.mean(dice_ls)
@@ -258,10 +247,9 @@ class Solver(object):
                     (epoch + 1),
                     total_dice,
                     np.mean(Jac_ls),
-                    np.mean(self.cldc_ls)
-                ))
+                    np.mean(self.cldc_ls) if self.args.num_class == 1 else 0.0                ))
 
-            return np.mean(self.dice_ls)
+            return total_dice
 
 
     def per_class_dice(self,y_pred, y_true):

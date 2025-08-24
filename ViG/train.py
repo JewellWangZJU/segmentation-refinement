@@ -50,8 +50,8 @@ def parse_args():
     # checkpoint and log
     parser.add_argument('--pretrained', type=str, default=None,
                         help='put the path to resuming file if needed')
-    parser.add_argument('--weights', type=str, default='/home/ziyun/Desktop/project/BiconNet_codes/DconnNet/general/data_loader/retouch_weights/',
-                        help='path of SDL weights')
+    parser.add_argument('--weights', type=str, default='/home/jewellwang/myproject/segmentation-refinement/ViG/checkpoints',
+                        help='path of ViG weights')
     parser.add_argument('--save', default='save',
                         help='Directory for saving checkpoint models')
 
@@ -137,7 +137,6 @@ def main(args):
         print("Test batch number: %i" % len(val_loader))
 
         #### Above: define how you get the data on your own dataset ######
-        # model = DconnNet(num_class=args.num_class).cuda()
         model = vig_seg_s_224_gelu(num_class=args.num_class).cuda() 
 
         if args.pretrained:

@@ -333,7 +333,7 @@ class LWdecoder(nn.Module):
         adapted_feats = []
         assert len(feat_list) == len(self.blocks), f"[DBG] decoder got {len(feat_list)} feats, expected {len(self.blocks)}"
         for idx, feat in enumerate(feat_list):
-            print(f'[DBG] decoder in feat[{idx}]:', feat.shape, f'(expect in_channels={self._in_channels[idx]}')
+            # print(f'[DBG] decoder in feat[{idx}]:', feat.shape, f'(expect in_channels={self._in_channels[idx]}')
 
             if idx < len(self.adapter_layers):
                 adapted_feat = self.adapter_layers[idx](feat)
@@ -429,7 +429,7 @@ class VigSeg(nn.Module):
     def forward(self, x):
         features = []
         stem_output = self.stem(x)
-        print('[DBG] stem:', stem_output.shape)
+        # print('[DBG] stem:', stem_output.shape)
         
         # 确保pos_embed尺寸匹配
         B, C, H, W = stem_output.shape
@@ -437,14 +437,14 @@ class VigSeg(nn.Module):
             pos_embed_resized = F.interpolate(self.pos_embed, size=(H, W), mode='bilinear', align_corners=True)
         else:
             pos_embed_resized = self.pos_embed
-        print('[DBG] pos_embed_resized:', pos_embed_resized.shape)
+        # print('[DBG] pos_embed_resized:', pos_embed_resized.shape)
         
         x = stem_output + pos_embed_resized
         
         for i in range(len(self.encoder)):
             if i > 0:
                 x = self.downsample_layers[i](x)
-                print(f'DBG downsample to stage {i}:', x.shape)
+                print(f'[DBG] downsample to stage {i}:', x.shape)
             for block in self.encoder[i]:
                 x = block(x)
             features.append(x)

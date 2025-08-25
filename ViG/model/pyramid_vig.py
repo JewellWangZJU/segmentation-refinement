@@ -268,7 +268,7 @@ def pvig_b_224_gelu(pretrained=False, **kwargs):
 # 添加LWdecoder类
 class LWdecoder(nn.Module):
     def __init__(self,
-                 in_channels,  # 现在是一个列表，例如 [80, 160, 400, 640]
+                 in_channels,  # 这是一个列表 [80, 160, 400, 640]
                  out_channels,
                  in_feat_output_strides=(4, 8, 16, 32),
                  out_feat_output_stride=4,
@@ -294,18 +294,29 @@ class LWdecoder(nn.Module):
         if len(in_channels) != len(in_feat_output_strides):
             raise ValueError("in_channels and in_feat_output_strides must have the same length")
         
+        # 为每个特征级别创建适配层
+        self.adapter_layers = nn.ModuleList()
+        for i, in_channel in enumerate(in_channels):
+            # 添加一个适配层来调整通道数
+            adapter = nn.Sequential(
+                nn.Conv2d(in_channel, out_channels, 1, bias=False),
+                norm_fn(**norm_fn_args),
+                nn.ReLU(inplace=True)
+            )
+            self.adapter_layers.append(adapter)
+        
+        # 创建上采样块
         for i, in_feat_os in enumerate(in_feat_output_strides):
             num_upsample = int(math.log2(int(in_feat_os))) - int(math.log2(int(out_feat_output_stride)))
-            num_layers = num_upsample if num_upsample != 0 else 1
+            num_layers = num_upsample if num_upsample > 0 else 1
             
             layers = []
             for idx in range(num_layers):
-                # 第一层使用对应的输入通道数，后续层使用输出通道数
-                input_channels = in_channels[i] if idx == 0 else out_channels
+                # 所有层都使用out_channels，因为我们已经通过适配层调整了通道数
                 layers.append(
                     nn.Sequential(
-                        nn.Conv2d(input_channels, out_channels, 3, 1, 1, bias=False),
-                        norm_fn(**norm_fn_args) if norm_fn is not None else nn.Identity(),
+                        nn.Conv2d(out_channels, out_channels, 3, 1, 1, bias=False),
+                        norm_fn(**norm_fn_args),
                         nn.ReLU(inplace=True),
                         nn.UpsamplingBilinear2d(scale_factor=2) if idx < num_layers - 1 else nn.Identity(),
                     )
@@ -315,15 +326,24 @@ class LWdecoder(nn.Module):
 
     def forward(self, feat_list: list):
         inner_feat_list = []
+        
+        # 首先通过适配层调整所有特征图的通道数
+        adapted_feats = []
+        for idx, feat in enumerate(feat_list):
+            if idx < len(self.adapter_layers):
+                adapted_feat = self.adapter_layers[idx](feat)
+                adapted_feats.append(adapted_feat)
+        
+        # 然后对每个适配后的特征进行上采样
         for idx, block in enumerate(self.blocks):
-            if idx < len(feat_list):
-                decoder_feat = block(feat_list[idx])
+            if idx < len(adapted_feats):
+                decoder_feat = block(adapted_feats[idx])
                 inner_feat_list.append(decoder_feat)
         
         if not inner_feat_list:
             return None
         
-        # 将所有特征图上采样到相同的尺寸并求和
+        # 将所有特征图上采样到相同的尺寸并求平均
         target_size = inner_feat_list[0].shape[2:]
         upsampled_feats = []
         for feat in inner_feat_list:
@@ -356,8 +376,11 @@ class VigSeg(nn.Module):
         max_dilation = 49 // max(num_knn)
         
         self.stem = Stem(out_dim=channels[0], act=act)
-        self.pos_embed = nn.Parameter(torch.zeros(1, channels[0], opt.img_size//4, opt.img_size//4))
-        HW = opt.img_size // 4 * opt.img_size // 4
+        
+        # 动态计算pos_embed尺寸
+        stem_output_size = opt.img_size // 4  # Stem有2次stride=2的下采样
+        self.pos_embed = nn.Parameter(torch.zeros(1, channels[0], stem_output_size, stem_output_size))
+        HW = stem_output_size * stem_output_size
 
         self.encoder = nn.ModuleList()
         self.downsample_layers = nn.ModuleList()
@@ -380,11 +403,11 @@ class VigSeg(nn.Module):
                 idx += 1
             self.encoder.append(stage)
             if i > 0:
-                HW = HW // 4
+                HW = HW // 4  # 每次下采样后特征图尺寸减半
 
-        # Decoder - 使用修改后的LWdecoder
+        # Decoder
         self.decoder = LWdecoder(
-            in_channels=channels,  # 传递通道数列表
+            in_channels=channels,
             out_channels=opt.decoder_out_channels,
             in_feat_output_strides=[4, 8, 16, 32],
             out_feat_output_stride=4,
@@ -400,17 +423,25 @@ class VigSeg(nn.Module):
 
     def forward(self, x):
         features = []
-        x = self.stem(x) + self.pos_embed
-        features.append(x)  # 1/4 scale
+        stem_output = self.stem(x)
+        
+        # 确保pos_embed尺寸匹配
+        B, C, H, W = stem_output.shape
+        if self.pos_embed.shape[2:] != (H, W):
+            pos_embed_resized = F.interpolate(self.pos_embed, size=(H, W), mode='bilinear', align_corners=True)
+        else:
+            pos_embed_resized = self.pos_embed
+        
+        x = stem_output + pos_embed_resized
+        features.append(x)
         
         for i in range(len(self.encoder)):
             if i > 0:
                 x = self.downsample_layers[i](x)
             for block in self.encoder[i]:
                 x = block(x)
-            features.append(x)  # 保存不同尺度的特征
+            features.append(x)
         
-        # 解码特征
         x = self.decoder(features)
         x = self.seg_head(x)
         return x
@@ -434,7 +465,7 @@ def vig_seg_s_224_gelu(pretrained=False, **kwargs):
             self.channels = [80, 160, 400, 640]
             self.n_classes = num_classes
             self.emb_dims = 1024
-            self.img_size = 224
+            self.img_size = kwargs.get('img_size', 224) # 从kwargs获取img_size,默认为224
             self.decoder_out_channels = 256
 
     opt = OptInit(**kwargs)

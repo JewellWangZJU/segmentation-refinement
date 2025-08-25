@@ -139,7 +139,7 @@ def main(args):
         print("Test batch number: %i" % len(val_loader))
 
         #### Above: define how you get the data on your own dataset ######
-        model = vig_seg_s_224_gelu(num_class=args.num_class).cuda() 
+        model = vig_seg_s_224_gelu(num_class=args.num_class, img_size=args.resize[0]).cuda() 
 
         if args.pretrained:
             model.load_state_dict(torch.load(args.pretrained,map_location = torch.device('cpu')))

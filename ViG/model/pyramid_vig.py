@@ -296,7 +296,7 @@ class LWdecoder(nn.Module):
         
         # 为每个特征级别创建适配层
         self.adapter_layers = nn.ModuleList()
-        for i, in_channel in enumerate(in_channels):
+        for i, in_channel in in_channels:
             # 添加一个适配层来调整通道数
             adapter = nn.Sequential(
                 nn.Conv2d(in_channel, out_channels, 1, bias=False),
@@ -441,6 +441,13 @@ class VigSeg(nn.Module):
             for block in self.encoder[i]:
                 x = block(x)
             features.append(x)
+
+        # 确保我们有4个特征图(对应4个适配层)
+        if len(features) > 4:
+            features = features[:4] # 只取前4个
+        elif len(features) < 4:
+            while len(features) < 4:
+                features.append(features[-1])
         
         x = self.decoder(features)
         x = self.seg_head(x)

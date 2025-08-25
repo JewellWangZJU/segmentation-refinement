@@ -265,19 +265,17 @@ def pvig_b_224_gelu(pretrained=False, **kwargs):
     model = DeepGCN(opt)
     model.default_cfg = default_cfgs['vig_b_224_gelu']
     return model
-# 在pyramid_vig.py中添加LWdecoder类
-import math
-from torch.nn import functional as F
-
+# 添加LWdecoder类
 class LWdecoder(nn.Module):
     def __init__(self,
-                 in_channels,
+                 in_channels,  # 现在是一个列表，例如 [80, 160, 400, 640]
                  out_channels,
                  in_feat_output_strides=(4, 8, 16, 32),
                  out_feat_output_stride=4,
                  norm_fn=nn.BatchNorm2d,
                  num_groups_gn=None):
         super(LWdecoder, self).__init__()
+        
         if norm_fn == nn.BatchNorm2d:
             norm_fn_args = dict(num_features=out_channels)
         elif norm_fn == nn.GroupNorm:
@@ -286,28 +284,57 @@ class LWdecoder(nn.Module):
             norm_fn_args = dict(num_groups=num_groups_gn, num_channels=out_channels)
         else:
             raise ValueError('Type of {} is not support.'.format(type(norm_fn)))
+        
         self.blocks = nn.ModuleList()
-        for in_feat_os in in_feat_output_strides:
+        
+        # 确保in_channels是一个列表，并且长度与in_feat_output_strides匹配
+        if not isinstance(in_channels, list):
+            in_channels = [in_channels] * len(in_feat_output_strides)
+        
+        if len(in_channels) != len(in_feat_output_strides):
+            raise ValueError("in_channels and in_feat_output_strides must have the same length")
+        
+        for i, in_feat_os in enumerate(in_feat_output_strides):
             num_upsample = int(math.log2(int(in_feat_os))) - int(math.log2(int(out_feat_output_stride)))
             num_layers = num_upsample if num_upsample != 0 else 1
-            self.blocks.append(nn.Sequential(*[
-                nn.Sequential(
-                    nn.Conv2d(in_channels if idx ==0 else out_channels, out_channels, 3, 1, 1, bias=False),
-                    norm_fn(**norm_fn_args) if norm_fn is not None else nn.Identity(),
-                    nn.ReLU(inplace=True),
-                    nn.UpsamplingBilinear2d(scale_factor=2) if num_upsample != 0 else nn.Identity(),
+            
+            layers = []
+            for idx in range(num_layers):
+                # 第一层使用对应的输入通道数，后续层使用输出通道数
+                input_channels = in_channels[i] if idx == 0 else out_channels
+                layers.append(
+                    nn.Sequential(
+                        nn.Conv2d(input_channels, out_channels, 3, 1, 1, bias=False),
+                        norm_fn(**norm_fn_args) if norm_fn is not None else nn.Identity(),
+                        nn.ReLU(inplace=True),
+                        nn.UpsamplingBilinear2d(scale_factor=2) if idx < num_layers - 1 else nn.Identity(),
+                    )
                 )
-                for idx in range(num_layers)]))
+            
+            self.blocks.append(nn.Sequential(*layers))
 
     def forward(self, feat_list: list):
         inner_feat_list = []
         for idx, block in enumerate(self.blocks):
-            decoder_feat = block(feat_list[idx])
-            inner_feat_list.append(decoder_feat)
-        out_feat = sum(inner_feat_list) / len(inner_feat_list)
+            if idx < len(feat_list):
+                decoder_feat = block(feat_list[idx])
+                inner_feat_list.append(decoder_feat)
+        
+        if not inner_feat_list:
+            return None
+        
+        # 将所有特征图上采样到相同的尺寸并求和
+        target_size = inner_feat_list[0].shape[2:]
+        upsampled_feats = []
+        for feat in inner_feat_list:
+            if feat.shape[2:] != target_size:
+                feat = F.interpolate(feat, size=target_size, mode='bilinear', align_corners=True)
+            upsampled_feats.append(feat)
+        
+        out_feat = sum(upsampled_feats) / len(upsampled_feats)
         return out_feat
 
-# 在pyramid_vig.py中添加VigSeg类
+# 添加Vigseg类
 class VigSeg(nn.Module):
     def __init__(self, opt):
         super(VigSeg, self).__init__()
@@ -324,8 +351,8 @@ class VigSeg(nn.Module):
         self.n_blocks = sum(blocks)
         channels = opt.channels
         reduce_ratios = [4, 2, 1, 1]
-        dpr = [x.item() for x in torch.linspace(0, drop_path, self.n_blocks)]  # stochastic depth decay rule 
-        num_knn = [int(x.item()) for x in torch.linspace(k, k, self.n_blocks)]  # number of knn's k
+        dpr = [x.item() for x in torch.linspace(0, drop_path, self.n_blocks)]
+        num_knn = [int(x.item()) for x in torch.linspace(k, k, self.n_blocks)]
         max_dilation = 49 // max(num_knn)
         
         self.stem = Stem(out_dim=channels[0], act=act)
@@ -335,11 +362,13 @@ class VigSeg(nn.Module):
         self.encoder = nn.ModuleList()
         self.downsample_layers = nn.ModuleList()
         idx = 0
+        
         for i in range(len(blocks)):
             if i > 0:
                 self.downsample_layers.append(Downsample(channels[i-1], channels[i]))
             else:
                 self.downsample_layers.append(nn.Identity())
+            
             stage = nn.ModuleList()
             for j in range(blocks[i]):
                 stage.append(nn.Sequential(
@@ -353,9 +382,9 @@ class VigSeg(nn.Module):
             if i > 0:
                 HW = HW // 4
 
-        # Decoder
+        # Decoder - 使用修改后的LWdecoder
         self.decoder = LWdecoder(
-            in_channels=channels, 
+            in_channels=channels,  # 传递通道数列表
             out_channels=opt.decoder_out_channels,
             in_feat_output_strides=[4, 8, 16, 32],
             out_feat_output_stride=4,
@@ -373,19 +402,20 @@ class VigSeg(nn.Module):
         features = []
         x = self.stem(x) + self.pos_embed
         features.append(x)  # 1/4 scale
+        
         for i in range(len(self.encoder)):
             if i > 0:
                 x = self.downsample_layers[i](x)
             for block in self.encoder[i]:
                 x = block(x)
-            features.append(x)  # Save features at different scales: 1/4, 1/8, 1/16, 1/32
-
-        # Decode features
+            features.append(x)  # 保存不同尺度的特征
+        
+        # 解码特征
         x = self.decoder(features)
         x = self.seg_head(x)
         return x
 
-# 在pyramid_vig.py中添加模型注册函数
+# 添加模型注册函数
 @register_model
 def vig_seg_s_224_gelu(pretrained=False, **kwargs):
     class OptInit:
@@ -410,4 +440,5 @@ def vig_seg_s_224_gelu(pretrained=False, **kwargs):
     opt = OptInit(**kwargs)
     model = VigSeg(opt)
     return model
+
 

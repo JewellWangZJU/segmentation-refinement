@@ -97,15 +97,6 @@ class Solver(object):
         
         self.create_exp_directory(exp_id)
 
-        if self.args.use_SDL:
-            assert 'retouch' in self.args.dataset, 'Please input the calculated distribution data of your own dataset, if you are now using Retouch'
-            device_name = self.args.dataset.split('retouch-')[1]
-            pos_cnt = np.load(self.args.weights+device_name+'/training_positive_pixel_'+str(exp_id)+'.npy',allow_pickle=True)
-            density, val_in_bin,bin_wide = self.get_density(pos_cnt)
-            self.loss_func=connect_loss(self.args,self.hori_translation,self.verti_translation, density,bin_wide)
-        else:
-            self.loss_func=connect_loss(self.args,self.hori_translation,self.verti_translation)
-
         net = model.cuda() 
         optimizer = self.optim(net.parameters(), lr=self.lr)
         scaler = GradScaler()

@@ -46,6 +46,8 @@ def parse_args():
                         help='define only when you select step lr optimization: what is the step size for reducing your lr')
     parser.add_argument('--gamma', type=float, default=0.5,  
                         help='define only when you select step lr optimization: what is the annealing rate for reducing your lr (lr = lr*gamma)')
+    parser.add_argument('--folds', type=int, default=3,
+                        help='define folds number K for K-fold validation')
 
     # checkpoint and log
     parser.add_argument('--pretrained', type=str, default=None,

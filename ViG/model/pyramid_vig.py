@@ -275,6 +275,8 @@ class LWdecoder(nn.Module):
                  norm_fn=nn.BatchNorm2d,
                  num_groups_gn=None):
         super(LWdecoder, self).__init__()
+
+        self._in_channels = in_channels[:]
         
         if norm_fn == nn.BatchNorm2d:
             norm_fn_args = dict(num_features=out_channels)
@@ -296,7 +298,7 @@ class LWdecoder(nn.Module):
         
         # 为每个特征级别创建适配层
         self.adapter_layers = nn.ModuleList()
-        for i, in_channel in in_channels:
+        for in_channel in in_channels:
             # 添加一个适配层来调整通道数
             adapter = nn.Sequential(
                 nn.Conv2d(in_channel, out_channels, 1, bias=False),
@@ -329,7 +331,10 @@ class LWdecoder(nn.Module):
         
         # 首先通过适配层调整所有特征图的通道数
         adapted_feats = []
+        assert len(feat_list) == len(self.blocks), f"[DBG] decoder got {len(feat_list)} feats, expected {len(self.blocks)}"
         for idx, feat in enumerate(feat_list):
+            print(f'[DBG] decoder in feat[{idx}]:', feat.shape, f'(expect in_channels={self._in_channels[idx]}')
+
             if idx < len(self.adapter_layers):
                 adapted_feat = self.adapter_layers[idx](feat)
                 adapted_feats.append(adapted_feat)
@@ -424,6 +429,7 @@ class VigSeg(nn.Module):
     def forward(self, x):
         features = []
         stem_output = self.stem(x)
+        print('[DBG] stem:', stem_output.shape)
         
         # 确保pos_embed尺寸匹配
         B, C, H, W = stem_output.shape
@@ -431,24 +437,26 @@ class VigSeg(nn.Module):
             pos_embed_resized = F.interpolate(self.pos_embed, size=(H, W), mode='bilinear', align_corners=True)
         else:
             pos_embed_resized = self.pos_embed
+        print('[DBG] pos_embed_resized:', pos_embed_resized.shape)
         
         x = stem_output + pos_embed_resized
-        features.append(x)
         
         for i in range(len(self.encoder)):
             if i > 0:
                 x = self.downsample_layers[i](x)
+                print(f'DBG downsample to stage {i}:', x.shape)
             for block in self.encoder[i]:
                 x = block(x)
             features.append(x)
+            print(f"[DBG] stage{i}_out:", x.shape)
 
-        # 确保我们有4个特征图(对应4个适配层)
-        if len(features) > 4:
-            features = features[:4] # 只取前4个
-        elif len(features) < 4:
-            while len(features) < 4:
-                features.append(features[-1])
         
+        # assert只有4个尺度
+        assert len(features) == 4, f"[DBG] feature len= {len(features)} != 4"
+        for idx, f in enumerate(features):
+            print(f"[DBG] features[{idx}]:", f.shape)
+
+
         x = self.decoder(features)
         x = self.seg_head(x)
         return x

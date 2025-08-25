@@ -33,6 +33,7 @@ class Solver(object):
             self.verti_translation[:,:,j,j+1] = torch.tensor(1.0)
         self.hori_translation = self.hori_translation.float()
         self.verti_translation = self.verti_translation.float()
+        self.loss_func = vig_loss.VigSegLoss(args).cuda()
 
     def create_exp_directory(self,exp_id):
         if not os.path.exists('models/' + str(exp_id)):
@@ -84,16 +85,9 @@ class Solver(object):
 
     def train(self, model, train_loader, val_loader,exp_id, num_epochs=10):
 
-        #### lr update schedule
-        # gamma = 0.5
-        # step_size = 10
         optim = self.optim(model.parameters(), lr=self.lr)
-        # scheduler = lr_scheduler.MultiStepLR(optim, milestones=[12,24,35],
-        #                                 gamma=gamma)  # decay LR by a factor of 0.5 every 5 epochs
-        ####
 
         print('START TRAIN.')
-
         
         self.create_exp_directory(exp_id)
 
@@ -128,26 +122,24 @@ class Solver(object):
 
                 for i_batch, sample_batched in enumerate(train_loader):
                     X = Variable(sample_batched[0]).cuda()
-                    y = Variable(sample_batched[1]).float().cuda()
+                    if self.args.num_class == 1:
+                        y = Variable(sample_batched[1]).float().cuda() 
+                        if y.dim == 3:
+                            y = y.unsqueeze(1).float()
+                    else:
+                        y = Variable(sample_batched[1]).long().cuda() # [N,H,W]
 
-                    # print(X.shape,y.shape)
+
                     optimizer.zero_grad()
                     with autocast():
                         output = net(X)
 
-                        # 检查主输入和辅输入的 min/max, 是否已经Inf
-                        # print(f"[Batch {i_batch}] output.max: {output.max().item():.4f}, output.min: {output.min().item():.4f}")
-                        # print(f"[Batch {i_batch}] aux_out.max: {aux_out.max().item():.4f}, aux_out.min: {aux_out.min().item():.4f}")
-
-                        # 检查标签y范围
-                        # print(f"[Batch {i_batch}] y.max: {y.max().item():.4f}, y.min: {y.min().item():.4f}, y.shape: {y.shape}, output.shape: {output.shape}")
+                        # 空间尺寸对齐 (很多头是1/4或1/8输出)
+                        if output.shape[-2:] != y.shape[-2:]:
+                            output = F.interpolate(output, size=y.shape[-2:], mode='bilinear', align_corners=False)
 
                         loss = self.loss_func(output, y)
                     
-
-                    # 检查是Loss的哪个分项出现了Inf
-                    # print(f"[Epoch {epoch} | Batch {i_batch}] loss_main: {loss_main.item():.4f}, loss_aux: {loss_aux.item():.4f}, total: {loss.item():.4f}")
-                    # 若Loss为Inf or NaN则退出程序 
                     if torch.isinf(loss) or torch.isnan(loss):
                         print("Warning: Loss Inf or NaN. Stop Training!")
                         exit()

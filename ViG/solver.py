@@ -173,67 +173,86 @@ class Solver(object):
             # writer.close()
             print('FINISH.')
             
-    def test_epoch(self,model,loader,epoch,exp_id):
+    def test_epoch(self, model, loader, epoch, exp_id):
         model.eval()
-        self.dice_ls = []
-        self.Jac_ls=[]
-        self.cldc_ls = []
-        with torch.no_grad(): 
+        self.dice_ls, self.Jac_ls, self.cldc_ls = [], [], []
+
+        with torch.no_grad():
             for j_batch, test_data in enumerate(loader):
-                X_test = Variable(test_data[0])
-                y_test = Variable(test_data[1])
+                X_test = test_data[0].cuda()
+                y_test = test_data[1].cuda()
 
-                X_test= X_test.cuda()
-                y_test = y_test.long().cuda()
+                output_test = model(X_test)  # [N,C,h,w] or [N,1,h,w]
 
-                output_test = model(X_test)
-                batch,channel,H,W = X_test.shape
+                # 尺寸对齐到 label
+                if output_test.shape[-2:] != y_test.shape[-2:]:
+                    output_test = F.interpolate(output_test, size=y_test.shape[-2:], mode='bilinear', align_corners=False)
 
-                if self.args.num_class == 1:  
-                    output_test = F.sigmoid(output_test)
-                    pred = torch.where(class_pred>0.5,1,0)
-
-                else:
-                    ouput_test = F.softmax(output_test, dim=1)
-                    _, pred = output_test.max(dim=1)
-                    pred = pred.unsqueeze(1)
-                    pred = self.one_hot(pred, X_test.shape)
-                
-
-                dice,Jac = self.per_class_dice(pred,y_test)
-                
                 if self.args.num_class == 1:
-                    pred_np = pred.squeeze().cpu().numpy()
-                    target_np = y_test.squeeze().cpu().numpy()
-                    cldc = clDice(pred_np,target_np)
+                    # ---- 二分类：sigmoid + 阈值 ----
+                    # 期望：y_test 为 0/1，形状 [N,1,H,W]（若 [N,H,W] 则先升维）
+                    if y_test.dim() == 3:
+                        y_test = y_test.unsqueeze(1)
+                    y_test = y_test.float()                    # [N,1,H,W]
+
+                    prob = torch.sigmoid(output_test)          # [N,1,H,W]
+                    pred = (prob > 0.5).float()                # [N,1,H,W]
+
+                    # clDice（若你需要）
+                    try:
+                        from metrics.cldice import clDice
+                        pred_np   = pred.squeeze(1).cpu().numpy()
+                        target_np = y_test.squeeze(1).cpu().numpy()
+                        cldc = clDice(pred_np, target_np)
+                    except Exception:
+                        cldc = 0.0
                     self.cldc_ls.append(cldc)
 
-                ###### notice: for multi-class segmentation, the self.dice_ls calculated following exclude the background (BG) class
+                    # 计算Dice/Jaccard（对齐你现有的 per_class_dice 接口：用 one-hot）
+                    y_oh = torch.cat([1 - y_test, y_test], dim=1)     # [N,2,H,W]
+                    p_oh = torch.cat([1 - pred,   pred  ], dim=1)     # [N,2,H,W]
+                    dice, Jac = self.per_class_dice(p_oh, y_oh)        # 返回 per-class
 
-                if self.args.num_class>1:
-                    self.dice_ls += torch.mean(dice[:,1:],1).tolist() ## use self.dice_ls += torch.mean(dice,1).tolist() if you want to include BG
-                    self.Jac_ls += torch.mean(Jac[:,1:],1).tolist() ## same as above
+                    # 记录前景类（索引1）
+                    self.dice_ls += dice[:, 1].tolist()
+                    self.Jac_ls  += Jac[:, 1].tolist()
+
                 else:
-                    self.dice_ls += dice[:,0].tolist()
-                    self.Jac_ls += Jac[:,0].tolist()
+                    # ---- 多分类：softmax + argmax ----
+                    # 期望：y_test 为 Long，形状 [N,H,W]（若 [N,1,H,W] 则 squeeze）
+                    if y_test.dim() == 4 and y_test.size(1) == 1:
+                        y_test = y_test[:, 0, ...]
+                    y_test = y_test.long()                      # [N,H,W]
 
-                if j_batch%(max(1,int(len(loader)/5)))==0:
-                    print('[Iteration : ' + str(j_batch) + '/' + str(len(loader)) + '] Total DSC:%.3f ' %(
-                        np.mean(self.dice_ls)))
+                    prob = F.softmax(output_test, dim=1)        # [N,C,H,W]
+                    pred_idx = prob.argmax(dim=1)               # [N,H,W]
 
-            Jac_ls =np.array(self.Jac_ls)
-            dice_ls = np.array(self.dice_ls)
-            total_dice = np.mean(dice_ls)
-            csv = 'results_'+str(exp_id)+'.csv'
+                    # one-hot 后计算Dice/Jaccard
+                    pred = self.one_hot(pred_idx.unsqueeze(1), X_test.shape)  # [N,C,H,W]
+                    y_oh = self.one_hot(y_test.unsqueeze(1),  X_test.shape)   # [N,C,H,W]
+
+                    dice, Jac = self.per_class_dice(pred, y_oh)
+                    # 记录前景均值（排除背景索引0）
+                    self.dice_ls += torch.mean(dice[:, 1:], 1).tolist()
+                    self.Jac_ls  += torch.mean(Jac[:, 1:], 1).tolist()
+
+                if j_batch % max(1, len(loader)//5) == 0:
+                    print(f'[Iteration : {j_batch}/{len(loader)}] Total DSC:{np.mean(self.dice_ls):.3f}')
+
+            Jac_ls   = np.array(self.Jac_ls)
+            dice_ls  = np.array(self.dice_ls)
+            total_dice = float(np.mean(dice_ls)) if dice_ls.size > 0 else 0.0
+
+            # 记录到 csv
+            csv = f'results_{exp_id}.csv'
             with open(os.path.join(self.args.save, csv), 'a') as f:
                 f.write('%03d,%0.6f,%0.6f,%0.6f \n' % (
                     (epoch + 1),
                     total_dice,
-                    np.mean(Jac_ls),
-                    np.mean(self.cldc_ls) if self.args.num_class == 1 else 0.0                ))
-
+                    float(np.mean(Jac_ls)) if Jac_ls.size > 0 else 0.0,
+                    float(np.mean(self.cldc_ls)) if (self.args.num_class == 1 and len(self.cldc_ls)>0) else 0.0
+                ))
             return total_dice
-
 
     def per_class_dice(self,y_pred, y_true):
         eps = 0.0001
@@ -266,8 +285,4 @@ def get_mask(output):
     #pred = pred.squeeze()
     
     return pred
-
-
-
-
 

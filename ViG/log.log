@@ -601,4 +601,1104 @@ DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
 DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
 [DBG] stage1_out: torch.Size([2, 160, 120, 120])
 DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
-[DBG] stage2_out: 
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 32/92] Total:1.085
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 33/92] Total:1.128
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 34/92] Total:1.101
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 35/92] Total:1.022
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 36/92] Total:1.156
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 37/92] Total:1.113
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 38/92] Total:1.024
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 39/92] Total:1.103
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 40/92] Total:1.027
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 41/92] Total:1.040
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 42/92] Total:1.015
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 43/92] Total:1.015
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 44/92] Total:1.013
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 45/92] Total:1.086
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 46/92] Total:1.044
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 47/92] Total:1.068
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 48/92] Total:1.055
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 49/92] Total:1.073
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 50/92] Total:1.046
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 51/92] Total:1.048
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 52/92] Total:1.003
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 53/92] Total:1.033
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 54/92] Total:0.980
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 55/92] Total:1.024
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 56/92] Total:1.010
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 57/92] Total:1.012
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 58/92] Total:1.058
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 59/92] Total:1.064
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 60/92] Total:1.077
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 61/92] Total:1.018
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 62/92] Total:0.977
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 63/92] Total:1.080
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 64/92] Total:1.038
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 65/92] Total:0.916
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 66/92] Total:0.977
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 67/92] Total:0.968
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 68/92] Total:0.891
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 69/92] Total:1.011
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 70/92] Total:0.950
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 71/92] Total:0.971
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 72/92] Total:1.001
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 73/92] Total:0.930
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 74/92] Total:1.072
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 75/92] Total:0.961
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 76/92] Total:0.973
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 77/92] Total:1.009
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 78/92] Total:0.918
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 79/92] Total:0.894
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 80/92] Total:0.904
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 81/92] Total:0.948
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 82/92] Total:0.873
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 83/92] Total:1.023
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 84/92] Total:0.971
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 85/92] Total:0.898
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 86/92] Total:0.891
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 87/92] Total:0.890
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 88/92] Total:0.812
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 89/92] Total:0.838
+[DBG] stem: torch.Size([2, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([2, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([2, 160, 120, 120])
+[DBG] stage1_out: torch.Size([2, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([2, 400, 60, 60])
+[DBG] stage2_out: torch.Size([2, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([2, 640, 30, 30])
+[DBG] stage3_out: torch.Size([2, 640, 30, 30])
+[DBG] features[0]: torch.Size([2, 80, 240, 240])
+[DBG] features[1]: torch.Size([2, 160, 120, 120])
+[DBG] features[2]: torch.Size([2, 400, 60, 60])
+[DBG] features[3]: torch.Size([2, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([2, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([2, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([2, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([2, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 90/92] Total:0.956
+[DBG] stem: torch.Size([1, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([1, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([1, 160, 120, 120])
+[DBG] stage1_out: torch.Size([1, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([1, 400, 60, 60])
+[DBG] stage2_out: torch.Size([1, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([1, 640, 30, 30])
+[DBG] stage3_out: torch.Size([1, 640, 30, 30])
+[DBG] features[0]: torch.Size([1, 80, 240, 240])
+[DBG] features[1]: torch.Size([1, 160, 120, 120])
+[DBG] features[2]: torch.Size([1, 400, 60, 60])
+[DBG] features[3]: torch.Size([1, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([1, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([1, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([1, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([1, 640, 30, 30]) (expect in_channels=640
+[epoch:0][Iteration : 91/92] Total:0.797
+[DBG] stem: torch.Size([1, 80, 240, 240])
+[DBG] pos_embed_resized: torch.Size([1, 80, 240, 240])
+[DBG] stage0_out: torch.Size([1, 80, 240, 240])
+DBG downsample to stage 1: torch.Size([1, 160, 120, 120])
+[DBG] stage1_out: torch.Size([1, 160, 120, 120])
+DBG downsample to stage 2: torch.Size([1, 400, 60, 60])
+[DBG] stage2_out: torch.Size([1, 400, 60, 60])
+DBG downsample to stage 3: torch.Size([1, 640, 30, 30])
+[DBG] stage3_out: torch.Size([1, 640, 30, 30])
+[DBG] features[0]: torch.Size([1, 80, 240, 240])
+[DBG] features[1]: torch.Size([1, 160, 120, 120])
+[DBG] features[2]: torch.Size([1, 400, 60, 60])
+[DBG] features[3]: torch.Size([1, 640, 30, 30])
+[DBG] decoder in feat[0]: torch.Size([1, 80, 240, 240]) (expect in_channels=80
+[DBG] decoder in feat[1]: torch.Size([1, 160, 120, 120]) (expect in_channels=160
+[DBG] decoder in feat[2]: torch.Size([1, 400, 60, 60]) (expect in_channels=400
+[DBG] decoder in feat[3]: torch.Size([1, 640, 30, 30]) (expect in_channels=640
+Traceback (most recent call last):
+  File "/mnt/data/myproject/segmentation-refinement/ViG/train.py", line 154, in <module>
+    main(args)
+  File "/mnt/data/myproject/segmentation-refinement/ViG/train.py", line 150, in main
+    solver.train(model, train_loader, val_loader,exp_id+1, num_epochs=args.epochs)
+  File "/mnt/data/myproject/segmentation-refinement/ViG/solver.py", line 156, in train
+    dice_p = self.test_epoch(net,val_loader,epoch,exp_id)
+  File "/mnt/data/myproject/segmentation-refinement/ViG/solver.py", line 194, in test_epoch
+    pred = torch.where(class_pred>0.5,1,0)
+NameError: name 'class_pred' is not defined

@@ -444,18 +444,15 @@ class VigSeg(nn.Module):
         for i in range(len(self.encoder)):
             if i > 0:
                 x = self.downsample_layers[i](x)
-                print(f'[DBG] downsample to stage {i}:', x.shape)
+                # print(f'[DBG] downsample to stage {i}:', x.shape)
             for block in self.encoder[i]:
                 x = block(x)
             features.append(x)
-            print(f"[DBG] stage{i}_out:", x.shape)
+            # print(f"[DBG] stage{i}_out:", x.shape)
 
         
         # assert只有4个尺度
         assert len(features) == 4, f"[DBG] feature len= {len(features)} != 4"
-        for idx, f in enumerate(features):
-            print(f"[DBG] features[{idx}]:", f.shape)
-
 
         x = self.decoder(features)
         x = self.seg_head(x)
